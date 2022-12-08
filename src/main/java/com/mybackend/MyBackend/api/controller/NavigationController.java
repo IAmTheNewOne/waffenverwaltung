@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.mybackend.MyBackend.model.RouteModel;
 import com.mybackend.MyBackend.persistence.repository.NavigationRepository;
+
 @RestController
 @RequestMapping("navigation")
 @CrossOrigin
@@ -23,9 +24,10 @@ public class NavigationController {
 	 * This API Rest Endpoint provides navigation DTOs for the frontend navigation bar
 	 * @return List<RouteModel>
 	 */
-	@GetMapping(path="/navigation", produces="application/json")
+	@GetMapping(path="/wurst", produces="application/json")
 	public List<RouteModel> getRoutes() {
 		System.out.println("Send Routes! " + LocalDateTime.now().toString());
 		return this.navRepo.getAllRouteModels();
 	}
+	
 }

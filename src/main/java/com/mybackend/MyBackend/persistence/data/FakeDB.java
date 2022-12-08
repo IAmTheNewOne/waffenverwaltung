@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 import com.mybackend.MyBackend.model.RouteModel;
+import com.mybackend.MyBackend.model.WeaponModel;
 
 /**
  * 
@@ -13,11 +14,11 @@ import com.mybackend.MyBackend.model.RouteModel;
  */
 @Service
 public class FakeDB {
-	//private static ArrayList<WeaponModel> weaponTable = new ArrayList<>();
+	private static ArrayList<WeaponModel> weaponTable = new ArrayList<>();
 	private static ArrayList<RouteModel> routeTable = new ArrayList<>();
 
 	public FakeDB() {
-		//this.initWeapons();
+		this.initWeapons();
 		this.initRoutes();
 	}
 
@@ -33,14 +34,14 @@ public class FakeDB {
 	 * Provides weapon data
 	 * @return
 	 */
-	//public List<WeaponModel> createWeapons() {    
-	//	return weaponTable;
-	//}
+	public List<WeaponModel> createWeaponModels() {    
+		return weaponTable;
+	}
 	
 	/**
 	 * Initiates the weapon data
 	 */
-	/* private void initWeapons() {
+	 private void initWeapons() {
 		WeaponModel weaponG36 = new WeaponModel(
 				"HK G36",
 				"Sturmgewehr",
@@ -96,7 +97,7 @@ public class FakeDB {
 		weaponTable.add(weaponM16);
 		weaponTable.add(weaponMP5);
 		weaponTable.add(weaponMP5);
-	}*/
+	}
 	
 	/**
 	 * Initiates the route data
