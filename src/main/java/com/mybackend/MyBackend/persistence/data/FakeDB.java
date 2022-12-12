@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 import com.mybackend.MyBackend.model.RouteModel;
+import com.mybackend.MyBackend.model.User;
 
 /**
  * 
@@ -15,10 +16,12 @@ import com.mybackend.MyBackend.model.RouteModel;
 public class FakeDB {
 	//private static ArrayList<WeaponModel> weaponTable = new ArrayList<>();
 	private static ArrayList<RouteModel> routeTable = new ArrayList<>();
+	private static ArrayList<User> userTable = new ArrayList<>();
 
 	public FakeDB() {
 		//this.initWeapons();
 		this.initRoutes();
+		this.initUser();
 	}
 
 	/**
@@ -36,6 +39,45 @@ public class FakeDB {
 	//public List<WeaponModel> createWeapons() {    
 	//	return weaponTable;
 	//}
+	
+	/**
+	 * Provides user data
+	 * @return
+	 */
+	public List<User> createUser(){
+		return userTable;
+	}
+	
+	/**
+	 * Initiates the user data
+	 */
+	
+	private void initUser() {
+		User user1 = new User(
+				"Max", "Mustermann", "max.mustermann@web.de", "qwertzuiop");
+		
+		User user2 = new User(
+				"Maria", "Muster", "maria.de", "qwert5456zuiop");
+		
+		User user3 = new User(
+				"Alina", "Busch", "Busch@web.de", "qwert");
+		
+		User user4 = new User(
+				"Marius", "Strauss", "marius@osnatel", "qweasdf23");
+		
+		User user5 = new User(
+				"Lea", "Scholz", "lea@web.de", "qwerp45");
+		
+		User user6 = new User(
+				"Felix", "Maus", "Maus@web.de", "qweasdyxc");
+		
+		userTable.add(user1);
+		userTable.add(user2);
+		userTable.add(user3);
+		userTable.add(user4);
+		userTable.add(user5);
+		userTable.add(user6);			
+	}
 	
 	/**
 	 * Initiates the weapon data
@@ -104,7 +146,9 @@ public class FakeDB {
 	private void initRoutes() {
 		RouteModel homepageRoute = new RouteModel("Homepage", "homepage");
 		RouteModel weaponListRoute = new RouteModel("Waffenarten", "weapon-list");
+		RouteModel userListRoute = new RouteModel("Benutzer", "userpage");
 		routeTable.add(homepageRoute);
 		routeTable.add(weaponListRoute);
+		routeTable.add(userListRoute);
 	}
 }
