@@ -69,4 +69,39 @@ public class WeaponModel {
 		this.image = image;
 	}
 	
+	
+	@Override
+	public boolean equals(Object obj) {
+		
+		if (obj == null) {
+			return true;
+		}
+		else if (obj instanceof WeaponModel) {
+			WeaponModel wm = (WeaponModel) obj;
+			if (this.id.equals(wm)|| this.name.contentEquals(wm.getID()) || this.name.equals(wm.getName())) {
+				System.out.println(this.id.equals(wm));
+				System.out.println(this.name.contentEquals(wm.getID()));
+				System.out.println(this.name.contentEquals(wm.getName()));
+				return true;
+			}else {
+				return false;
+			}
+		}
+//		else if (this.id.equals(obj.getID()) || this.name.equals(wm.getName()) || this.name.contentEquals(wm.getName())) {
+//			return true;
+//		}
+		return false;
+		
+	}
+			
+//			if (obj instanceof WeaponModel)
+//		WeaponModel wm = (WeaponModel) obj;
+//
+//		
+//		if (this.id.equals(wm.getID()) || this.name.equals(wm.getName()) || this.name.contentEquals(wm.getName())) {
+//			return true;
+//		}	
+//		return false;
+	
 }
+

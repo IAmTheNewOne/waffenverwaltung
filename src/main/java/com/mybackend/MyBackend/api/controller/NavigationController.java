@@ -24,7 +24,7 @@ public class NavigationController {
 	 * This API Rest Endpoint provides navigation DTOs for the frontend navigation bar
 	 * @return List<RouteModel>
 	 */
-	@GetMapping(path="/wurst", produces="application/json")
+	@GetMapping(path="/navigation", produces="application/json")
 	public List<RouteModel> getRoutes() {
 		System.out.println("Send Routes! " + LocalDateTime.now().toString());
 		return this.navRepo.getAllRouteModels();
